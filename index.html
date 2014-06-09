@@ -37,10 +37,11 @@
               <h3 class="masthead-brand">
               	<img src="img/voiceup-logo-red.png">
               </h3>
-              <ul class="nav masthead-nav none">
-                <li class="active"><a href="#">Home</a></li>
+              <ul class="nav masthead-nav">
+                <!-- <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">Features</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Contact</a></li> -->
+                <li><a href="#">"Secret" App for Enterprise 2.0</a></li>
               </ul>
             </div>
           </div>
@@ -76,27 +77,76 @@
 		        	</div>
 		        	<div class="clear"></div>
 		            <div class="form">
-		            	<form role="form">
-			            	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-			            	<br>
-			            	<a href="#" class="btn btn-lg btn-outline" role="button">Sign Up</a>
+		            	<p id="input-message">Sign up now for our Beta</p>
+		            	<form class="myform" action="http://sharemoto.us3.list-manage2.com/subscribe/post" method="GET">
+
+		            		<input type="hidden" name="u" value="afaf61d74164c6b9c55dee222">
+							<input type="hidden" name="id" value="1955472b25">
+							<div class="success-email" style="display:none">Success! Confirm your Email.</div>
+								<div id="submission-div">
+				            		<input type="email" class="form-control required email signup-email" name="MERGE0" id="MERGE0" placeholder="Email">
+				            		<br>
+				            		<input class="btn btn-lg btn-outline" id="submit-btn" type="submit" value="Sign Up">
+			            		</div>
+			            	</div>
 		            	</form>
 		            </div>
 	        	</div>
 	        </div>
-          </div>
 
-          <div class="mastfoot">
+          <div class="mastfoot col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="inner">
               <p><a href="#">Terms of Use</a> - <a href="#">Privacy Policy</a> - <a href="mailto:chany2.rpi@gmail.com">Contact Us</a></p>
             </div>
           </div>
+
+          </div>
+
 
         </div>
 
       </div>
 
     </div>
+
+    <script>
+		function validateEmail(email){
+	        var reg = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
+	        if (reg.test(email)){
+	            return true;
+	        }else{
+	            return false;
+	        }
+  		}
+		$('.myform').submit(function(e) {
+		  var email = $("#MERGE0").val();
+		  if(validateEmail(email)){
+		  	var $this = $(this);
+		  	$.ajax({
+		      type: "GET", // GET & url for json slightly different
+		      url: "http://sharemoto.us3.list-manage2.com/subscribe/post-json?c=?",
+		      data: $this.serialize(),
+		      dataType    : 'json',
+		      contentType: "application/json; charset=utf-8",
+		      error       : function(err) { alert("Could not connect to the registration server."); },
+		      success     : function(data) {
+		          if (data.result != "success") {
+		              // Something went wrong, parse data.msg string and display message
+		          } else {
+		              console.log('success');
+		              $('#submission-div').fadeOut(); 
+		              $('#input-message').fadeOut();
+		              $('.success-email').fadeIn();
+		              // It worked, so hide form and display thank-you message.
+		          }
+		      }
+		  	});
+		  	return false;
+		  }else{
+		  	alert('Email Error');
+		  }
+		});
+	</script>
   
 
 </body>
