@@ -6,18 +6,21 @@
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: #cc3701;
 }
 
 .none{
   display: none;
+}
+.clear{
+  clear: both;
 }
 
 /* Custom default button */
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
+  color: #fff;
   text-shadow: none; /* Prevent inheritence from `body` */
   background-color: #fff;
   border: 1px solid #fff;
@@ -31,11 +34,15 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #fff;
+  background-color: #19292F;
 }
 body {
-  color: #333;
+  color: #fff;
   text-align: center;
+
+  background:;
+  background-size:cover;
+  background-repeat: no-repeat;
   /*text-shadow: 0 1px 3px rgba(0,0,0,.5);
   box-shadow: inset 0 0 100px rgba(0,0,0,.5);*/
 }
@@ -85,7 +92,7 @@ body {
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
-  color: #333; /* IE8 proofing */
+  color: #fff; /* IE8 proofing */
   /* color: rgba(255,255,255,.75); */
   border-bottom: 2px solid transparent;
 }
@@ -97,12 +104,17 @@ body {
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
-  color: #333;
-  border-bottom-color: #333;
+  color: #fff;
+  border-bottom-color: #fff;
 }
 .preview img{
   width:70%;
+  /*position: absolute;*/
 }
+.form{
+  margin: 30px 0;
+}
+
 
 @media (min-width: 768px) {
   .masthead-brand {
@@ -113,7 +125,7 @@ body {
   }
   .masthead-brand img{
     width: 100px;
-    margin: -30px 0px 0 60px;
+    margin: -20px 0px 0 100px;
   }
 }
 
@@ -130,16 +142,26 @@ body {
 
 .cover {
   padding: 0 20px;
-  margin: 150px auto;
+  margin: 125px auto 50px;
 }
 .cover .btn-lg {
   padding: 10px 20px;
-  font-weight: bold;
+  font-weight: normal;
+}
+.form-control{
+  width: 80%;
+  margin: 0 auto;
+  height: 50px;
+  font-size: 20px;
 }
 .btn-outline {
-  color: #cc3701;
+  /*color: #cc3701;
   background-color: transparent;
-  border-color: #cc3701;
+  border-color: #cc3701;*/
+  color: #fff;
+  font-weight: 100;
+  text-decoration: none;
+  background: #cc3701;
 }
 
 /*
@@ -147,8 +169,8 @@ body {
  */
 
 .mastfoot {
-  color: #999; /* IE8 proofing */
-  color: rgba(255,255,255,.5);
+  color: #fff; /* IE8 proofing */
+  color: #fff;
 }
 
 
@@ -163,7 +185,7 @@ body {
     top: 0;
   }
   .mastfoot {
-    position: fixed;
+    /*position: fixed;*/
     bottom: 0;
   }
   /* Start the vertical centering */
