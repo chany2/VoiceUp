@@ -113,7 +113,7 @@ body {
   font-size: 18px;
 }
 .preview img{
-  width:55%;
+  width:90%;
   /*position: absolute;*/
 }
 .form{
@@ -126,6 +126,28 @@ body {
 
 h1{
   font-size: 28px;
+}
+
+.left{
+  /*margin:0 60px;*/
+}
+
+.center{
+  position: relative;
+  float: left;
+}
+
+.right{
+  float: right;
+  padding:70px 10px;
+}
+
+#demo-video{
+  position: absolute;
+  top: 95px;
+  left: 55px;
+  width: 239px;
+  height: auto;
 }
 
 
