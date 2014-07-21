@@ -136,6 +136,7 @@
 
 							 $("#company-form").delay(2000).hide(0);
 							 $("#email-form").delay(2500).fadeIn();
+							 $("#company_submission").text(company_name);
 		            	}
 
 		            });
@@ -144,7 +145,7 @@
 
 		            <!-- EMAIL FORM -->
 		            <div class="form none" id="email-form">
-		            	<p id="input-message"><a>Unfortunately, your company is not listed. <br>We will let you know when your company will be added.</a></p>
+		            	<p id="input-message"><a>Unfortunately, your company, <b id="company_submission"></b>, is not listed. <br>We will let you know when your company will be added.</a></p>
 		            	<form class="myform" action="http://sharemoto.us3.list-manage2.com/subscribe/post" method="GET">
 
 		            		<input type="hidden" name="u" value="afaf61d74164c6b9c55dee222">
