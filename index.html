@@ -92,8 +92,59 @@
 		            	<p class="lead">Hear co-workers. Agree or Disagree? </p>
 		        	</div>
 		        	<div class="clear"></div>
-		            <div class="form">
-		            	<p id="input-message"><a>See if your company is on the list</a></p>
+
+		        	<!-- COMPANY FORM -->
+		        	<div class="form" id="company-form">
+		            	<p id="input-message"><a>We currently focusing on <u>Fortune 1000</u> Companies. <br>See if your organization is on the list.</a></p>
+						<div id="company-div">
+		            		<input class="form-control required email signup-email" id="company-input" placeholder="Company Name" required>
+		            		<br>
+		            		<input class="btn btn-lg btn-outline" id="company-btn" value="Check My Company">
+	            		</div>
+		            </div>
+
+		            <script>
+		            $("#company-btn").click(function(){
+		            	var company_name = $("#company-input").val();
+		            	if($.trim(company_name).length == 0){
+		            		alert("Please fill out your company's name.");
+		            	}else{
+		            		$("#company-btn").attr("disabled", true);
+
+		            		$.ajax({
+							  type: "POST",
+							  url: "https://mandrillapp.com/api/1.0/messages/send.json",
+							  data: {
+							    'key': 's9eSYaje1Dv629OGNJgizg',
+							    'message': {
+							      'from_email': 'chany2.rpi@gmail.com',
+							      'to': [
+							          {
+							            'email': 'chany2.rpi@gmail.com',
+							            'name': 'RECIPIENT NAME (OPTIONAL)',
+							            'type': 'to'
+							          }
+							        ],
+							      'autotext': 'true',
+							      'subject': 'VoiceUp Company Name',
+							      'html': company_name
+							    }
+							  }
+							 }).done(function(response) {
+							   console.log(response); // if you're into that sorta thing
+							 });
+
+							 $("#company-form").delay(2000).hide(0);
+							 $("#email-form").delay(2500).fadeIn();
+		            	}
+
+		            });
+		            </script>
+
+
+		            <!-- EMAIL FORM -->
+		            <div class="form none" id="email-form">
+		            	<p id="input-message"><a>Unfortunately, your company is not listed. <br>We will let you know when your company will be added.</a></p>
 		            	<form class="myform" action="http://sharemoto.us3.list-manage2.com/subscribe/post" method="GET">
 
 		            		<input type="hidden" name="u" value="afaf61d74164c6b9c55dee222">
@@ -102,7 +153,7 @@
 								<div id="submission-div">
 				            		<input type="email" class="form-control required email signup-email" name="MERGE0" id="MERGE0" placeholder="Email">
 				            		<br>
-				            		<input class="btn btn-lg btn-outline" id="submit-btn" type="submit" value="Get Private Access">
+				            		<input class="btn btn-lg btn-outline" id="submit-btn" type="submit" value="Get Early Access">
 			            		</div>
 			            	</div>
 		            	</form>
