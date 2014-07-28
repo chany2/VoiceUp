@@ -9,7 +9,7 @@
 	
 	<meta name="author" content="VoiceUp">
 	
-	<link href="images/favicon.ico" rel="shortcut icon">
+	<link href="img/favicon.ico" rel="shortcut icon">
 
 	<meta charset="UTF-8">
 	<meta name="description" content="Deliver anonymous honest feedback in the workplace">
@@ -56,15 +56,16 @@
               		
 		              	<div class="center">
 					        <img src="img/iphone.png">
-					        <!-- <video poster="img/splash.png" id="demo-video" loop="" autoplay=""> -->
+					        <video poster="img/splash.png" id="demo-video" loop="" autoplay="">
+					       	<!--
 					        <div id="demo-video" style="left: 41px;width: 266px;">
 					        	<img src="img/voiceup.gif">
-					        </div>	
-					        <!-- <video id="demo-video" loop="" autoplay="">
-					          <source src="img/VoiceUp_keynote.mp4">
+					        </div>	-->
+					        <!-- <video id="demo-video" loop="" autoplay=""> -->
+					          <source src="img/voiceup.mp4">
 					          <source src="img/splash.png">
 					        <span>Your browser does not support the video tag.</span>
-					        </video> -->
+					        </video>
 		    			</div>
 
 
@@ -72,7 +73,7 @@
 	            	</div>
 	        	</div>
 	        	<div class="right col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		        	<h1 class="cover-heading">Speak your mind at Work. Honestly and Anonymously.</h1>
+		        	<h1 class="cover-heading">Speak your mind at Work. <br><b>No Politics, Just Ideas</b></h1>
 		        	<br>
 		        	<div class="clear"></div>
 		        	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -94,12 +95,41 @@
 		        	<div class="clear"></div>
 
 		        	<!-- COMPANY FORM -->
-		        	<div class="form" id="company-form">
+		        	<div class="form none" id="company-form">
 		            	<p id="input-message"><a>We currently focusing on <u>Fortune 1000</u> Companies. <br>See if your organization is on the list.</a></p>
 						<div id="company-div">
 		            		<input class="form-control required email signup-email" id="company-input" placeholder="Company Name" required>
 		            		<br>
 		            		<input class="btn btn-lg btn-outline" id="company-btn" value="Check My Company">
+	            		</div>
+		            </div>
+
+		            <!-- DOWNLOAD FORM -->
+		            <div class="form">
+						<div id="download-div">
+							<style>
+							#download-div img{
+								float:left;
+								width:45%;
+								margin:10px;
+							}
+							.right img{
+								-webkit-filter: invert(100%); 
+							}
+							.right .lead{
+								color: #cc3701;
+								font-weight: 300;
+							}
+							html, body{
+								background: #fff!important;
+								color:#4d4d4d;
+							}
+							.cover-heading b{
+								font-size: 1.3em
+							}
+							</style>
+		            		<a href="download.html"><img src="img/iphone-button.png"></a>
+		            		<a href="download.html"><img src="img/android-button.png"></a>
 	            		</div>
 		            </div>
 
@@ -225,7 +255,7 @@
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-52216108-1', 'chany2.github.io');
+	  ga('create', 'UA-52216108-2', 'auto');
 	  ga('send', 'pageview');
 
 	</script>
