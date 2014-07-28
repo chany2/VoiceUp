@@ -141,10 +141,6 @@ h1{
   font-size: 28px;
 }
 
-.left{
-  /*margin:0 60px;*/
-}
-
 .center{
   position: relative;
   float: left;
@@ -175,6 +171,14 @@ h1{
 }
 
 
+@media (max-width: 979px) {
+  .download-btn{
+    width:80%!important;
+    margin: 20px auto!important;
+    float:none!important;
+  }
+}
+
 @media (min-width: 768px) {
   .masthead-brand {
     float: left;
@@ -185,11 +189,20 @@ h1{
   .masthead-brand img{
     width: 65px;
   }
+  .download-btn{
+    width:80%;
+  }
 }
 
 @media (max-width: 767px) {
   .cover {
     margin: 20px auto!important;
+  }
+  .left{
+    /*margin:0 60px;*/
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
   }
 }
 
@@ -205,21 +218,32 @@ h1{
     /*display: none;*/
     margin: 0 0 0 5%;
   }
+  .left{
+    -webkit-box-align:none!important;
+    -webkit-box-pack:none!important;
+    display:block!important;
+  }
   .right{
     padding: 0px;
   }
   .preview img{
-    /*width: 55%;*/
+    /*width:100%;*/
     margin: 0 auto;
   }
   .sub_taglines img{
-    width: 15%;
     margin: 10px;
   }
-  #download-div img{
+  #download-div a{
+    margin: 20px auto!important;
+    float:none!important;
+    display: block;
+    width: 80%;
+    float: none;
+  }
+  /*#download-div img{
     width: 70%!important;
     float: none!important;
-  }
+  }*/
 }
 
 /*
